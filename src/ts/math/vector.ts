@@ -16,8 +16,7 @@ export function magnitude(vector: Vector) {
   return Math.sqrt(Math.pow(vector.x, 2) + Math.pow(vector.y, 2));
 }
 
-export function slerp(start: Vector, end: Vector, percent: number): Vector
-{
+export function slerp(start: Vector, end: Vector, percent: number): Vector {
   percent = clamp(0, 1, percent);
   const dt = dot(start, end);
   const theta = Math.acos(dt) * percent;

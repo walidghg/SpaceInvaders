@@ -1,20 +1,36 @@
-name: Build and Deploy
+name: CI Space Invaders
+
 on:
   push:
     branches:
-      - main
+      - '**'
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
 jobs:
-  build-and-deploy:
+  build-and-test:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          persist-credentials: false
-      - uses: actions/checkout@v2
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Linter
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Security Audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Run Unit Tests
+        run: npx jest
