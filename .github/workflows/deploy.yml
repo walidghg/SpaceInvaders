@@ -1,4 +1,4 @@
-name: CI Space Invaders
+name: CI/CD Space Invaders
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '14' 
 
       - name: Install dependencies
         run: npm install
@@ -33,4 +33,33 @@ jobs:
         continue-on-error: true
 
       - name: Run Unit Tests
-        run: npx jest
+        run: npx jest 
+
+      - name: Verify Docker Build
+        run: docker build -t space-invaders .
+
+  deploy:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the game
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
