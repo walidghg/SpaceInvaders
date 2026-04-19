@@ -32,6 +32,9 @@ jobs:
         run: npm audit --audit-level=high
         continue-on-error: true
 
+      - name: Force install ts-jest
+        run: npm install ts-jest @types/jest
+
       - name: Run Unit Tests
         run: npx jest 
 
