@@ -1,7 +1,6 @@
 # Space Invaders
 Simple game made for (https://js13kgames.com/)
 ![Gif showing the game](./screenshots/game.gif)
-Markdown
 # 🚀 Space Invaders - DevOps Edition
 
 Ce projet est une version améliorée du jeu classique Space Invaders, intégrant des pratiques DevOps et DevSecOps complètes (CI/CD, Tests automatisés, Conteneurisation).
