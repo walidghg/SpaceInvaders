@@ -37,22 +37,3 @@ docker run -d -p 8081:80 space-invaders
 Ouvrez votre navigateur web et accédez à l'adresse suivante :
 👉 http://localhost:8081
 
-🛠️ Pipeline CI/CD & Tests
-Ce projet intègre une pipeline GitHub Actions complète qui exécute automatiquement :
-
-Linter (Google JS Style)
-
-Audit de sécurité des dépendances (DevSecOps)
-
-Tests unitaires (Jest) : Formules mathématiques et logique ennemie
-
-Tests fonctionnels (Jest / UI) : Vérification de l'interface et du score
-
-
-### Pour trouver ton lien GitHub Pages exact :
-Si tu ne sais pas quoi mettre à la place de `TonNomUtilisateur.github.io/...` :
-1. Va sur la page de ton repo sur GitHub.
-2. Regarde à droite dans la section **Environments** ou clique sur la petite roue crantée (Settings) > **Pages**.
-3. Ton lien public y sera écrit noir sur blanc !
-
-Tu copies ça, tu fais un dernier petit `git push`, et c'est terminé ! Félicitations pour tout le travail abattu ! 👏
