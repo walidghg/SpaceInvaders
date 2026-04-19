@@ -1,5 +1,5 @@
 # Space Invaders
-Simple game made for [js13k](https://js13kgames.com/)
+Simple game made for (https://js13kgames.com/)
 ![Gif showing the game](./screenshots/game.gif)
 Markdown
 # 🚀 Space Invaders - DevOps Edition
