@@ -8,13 +8,6 @@ Ce projet est une version améliorée du jeu classique Space Invaders, intégran
 
 ## 🎮 Jouer en ligne
 
-Le jeu est automatiquement déployé via GitHub Actions. Vous pouvez y jouer directement ici :
-👉 **[Lien vers le jeu en ligne](https://TonNomUtilisateur.github.io/TonNomDeRepo/)**
-
-*(Remplace `TonNomUtilisateur` par ton vrai pseudo GitHub, et `TonNomDeRepo` par le nom de ton dépôt, par exemple : `https://walid93190.github.io/SpaceInvaders/`)*
-
----
-
 ## 🐳 Lancer le jeu localement avec Docker
 
 Si vous souhaitez faire tourner le jeu sur votre propre machine, tout est conteneurisé avec Docker. 
